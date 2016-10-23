@@ -62,7 +62,9 @@
           <root url="jar://$MODULE_DIR$/../../libs/log4j-api-2.3.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-api-2.3-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -80,7 +82,9 @@
           <root url="jar://$MODULE_DIR$/../../libs/fastjson-1.2.2.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/fastjson-1.2.2-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -89,7 +93,9 @@
           <root url="jar://$MODULE_DIR$/../../libs/log4j-core-2.3.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-core-2.3-sources.jar!/" />
+        </SOURCES>
       </library>
     </orderEntry>
     <orderEntry type="library" name="Gradle: org.apache.struts:struts2-core:2.3.20" level="project" />
