@@ -13,7 +13,10 @@ public interface DaoSupport<T> {
 
 	/**
 	 * 删除实体
-	 * 
+	 *
+     *
+     *
+     *
 	 * @param id
 	 */
 	public void delete(Long id);
