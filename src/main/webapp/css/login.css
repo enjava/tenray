@@ -1,0 +1,624 @@
+@charset "utf-8";
+
+/* CSS Document */
+
+
+/*  clearer */
+
+body {
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+	overflow-x: hidden;
+	/*background: #fff url('../img/login_opacity.jpg') no-repeat;*/
+}
+
+a {
+	color: #333;
+	text-decoration: none
+}
+
+input,
+button,
+select,
+textarea {
+	outline: none
+}
+
+li,
+ul,
+form,
+h3 {
+	padding: 0;
+	margin: 0;
+	list-style-type: none
+}
+
+img {
+	border: 0
+}
+
+p,
+h1,
+h3,
+h2 {
+	margin: 0;
+	padding: 0
+}
+
+
+/*  清除浮动 */
+
+.clearfloat {
+	clear: both;
+	height: 0;
+	font-size: 1px;
+	line-height: : 0px;
+}
+
+.clearfloat:after {
+	content: ".";
+	clear: both;
+	height: 0;
+	visibility: hidden;
+	display: block;
+}
+
+
+/* 这是对Firefox进行的处理，因为Firefox支持生成元素，而IE所有版本都不支持生成元素 */
+
+.clearfloat {
+	display: inline-block;
+}
+
+
+/* 这是对 Mac 上的IE浏览器进行的处理*/
+
+
+/* Hides from IE-mac */
+
+@font-face {
+	font-family: 'Kalinga';
+	src: url('https://bizhongchou.com/app/Tpl/bzc/font/Kalinga.ttf') format('truetype');
+}
+
+@font-face {
+	font-family: 'Kalingab';
+	src: url('https://bizhongchou.com/app/Tpl/bzc/font/Kalingab.ttf') format('truetype');
+}
+
+
+/*  左右浮动*/
+
+.fl {
+	float: left;
+}
+
+.fr {
+	float: right;
+}
+
+.ft {
+	color: #ffcc00;
+}
+
+
+/*  header */
+
+.header {
+	/*height: 60px;*/
+	height: 80px;
+	width: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	position: relative;
+	z-index: 5;
+	font-family: '微软雅黑';
+}
+
+.header-top {
+	overflow: auto;
+	float: right;
+}
+
+.item {
+	width: 110px;
+	/*height: 60px;*/
+	height: 80px;
+	display: inline-block;
+	background: #ee3531;
+	color: #fff;
+	/*line-height: 60px;*/
+	line-height: 80px;
+	text-align: center;
+	float: right;
+	-webkit-transition: all .3s ease-out;
+	-moz-transition: all .3s ease-out;
+	-ms-transition: all .3s ease-out;
+	-o-transition: all .3s ease-out;
+	transition: all .3s ease-out;
+	letter-spacing: 1.5px;
+}
+
+.item:hover {
+	background: #B22825
+}
+
+.loginbar a {
+	line-height: 24px;
+	text-align: center;
+	color: #fff;
+	padding: 0 10px;
+}
+
+.loginbar {
+	float: right;
+	/*margin-top: 20px;*/
+	margin-top: 30px;
+}
+
+.logo {
+	color: #fff;
+	font-size: 30px;
+	float: left;
+	line-height: 60px;
+	position: absolute;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	#margin-left: 15px;
+}
+.nav {
+	#width: 1000px;
+	max-width: 1200px;
+	margin-left:25% ;
+	zoom: 1;
+	opacity: 1;
+	position: absolute;
+}
+.header_list .row{
+	margin: auto;
+}
+.nav li,
+.nav li>a {
+	color: #fff;
+	font-size: 14px;
+}
+
+.nav li>a {
+	padding: 0 5px;
+	;
+}
+
+.nav li>a:hover {
+	color: #ee3531
+}
+
+.nav1 .active,
+.nav .active {
+	color: #ee3531;
+}
+
+.nav .searchbar {
+	position: relative;
+	float: left;
+	margin-top: 37px;
+}
+
+.nav .search,
+.nav1 .search {
+	border-radius: 14px;
+	border: 1px solid #e5e5e5;
+	height: 23px;
+	text-indent: 10px;
+}
+
+.nav .searchbtn,
+.nav1 .searchbtn {
+	display: inline-block;
+	height: 27px;
+	width: 41px;
+	background: url(https://bizhongchou.com/app/Tpl/bzc/images/search.png);
+	position: absolute;
+	margin-left: -15px;
+}
+
+.nav li span {
+	display: block;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background: #ee3531;
+	top: 58px;
+	left: 50%;
+	/*top: 40px*/
+	top: 55px;
+}
+
+.logo img {
+	height: 45px;
+	margin-top: 9px;
+	margin-left: 10px;
+}
+
+.nav1 {
+	position: relative;
+}
+
+.col-12 {
+	width: 100%;
+	padding-left: 2.5641%;
+	padding-right: 2.5641%;
+}
+
+.nav ul li span {
+	display: block;
+	position: absolute;
+	width: 0px;
+	height: 0px;
+	background: #1FAEFF;
+	top: 58px;
+	left: 50%;
+}
+
+
+/* 搜索框 */
+
+.search-button .sea {
+	display: inline-block;
+	height: 16px;
+	width: 16px;
+	margin-top: 3px;
+	cursor: pointer;
+	z-index: 999;
+}
+
+::-webkit-input-placeholder {
+	/* WebKit, Blink, Edge */
+	font-family: '微软雅黑'
+}
+
+:-moz-placeholder {
+	/* Mozilla Firefox 4 to 18 */
+	font-family: '微软雅黑'
+}
+
+::-moz-placeholder {
+	/* Mozilla Firefox 19+ */
+	font-family: '微软雅黑'
+}
+
+:-ms-input-placeholder {
+	/* Internet Explorer 10-11 */
+	font-family: '微软雅黑'
+}
+
+.search-button {
+	float: right;
+	margin: 20px 30px;
+	color: #fff;
+}
+
+.header_list .search-wrapper {
+	width: 800px;
+	max-width: 1200px;
+	margin: 0 auto;
+	zoom: 1;
+	opacity: 1;
+	padding: 15px 0;
+	position: absolute;
+}
+
+input {
+	font-family: '微软雅黑'
+}
+
+.search-wrapper .main-search {
+	display: inline-block;
+	/*width: 95%;*/
+	width:60%;
+	height: 30px;
+	line-height: 24px;
+	padding: 0 10px;
+	border: none;
+	color: #fff;
+	font-family: '微软雅黑';
+	font-weight: 400;
+	font-size: 16px;
+	background: rgba(255, 255, 255, 0.2)
+}
+
+.search-submit {
+	position: absolute;
+	right: -50px;
+	top: 20px;
+	color: #fff;
+}
+
+.search-close {
+	width: 55px;
+	height: 55px;
+	position: absolute;
+	top: 3px;
+	text-align: center;
+	cursor: pointer;
+	/*right: -70px;*/
+	right:-30%;
+	margin-top: 10px;
+	color: #fff;
+}
+
+.search-close:hover {
+	color: red
+}
+
+.row {
+	position: relative;
+	width: 1200px;
+	max-width: 1200px;
+	margin: 0 auto;
+	zoom: 1;
+	opacity: 1;
+}
+
+
+/* *****表单************ */
+
+.content {
+	width: 800px;
+	margin: 0 auto;
+	background: rgba(0, 0, 0, 0.5);
+	margin-top: 30px;
+	padding-bottom: 100px;
+}
+
+.login_title {
+	font: 38px/3 '微软雅黑';
+	color: #fff;
+	text-align: center;
+}
+
+.b_radius {
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+}
+
+#regfrm,
+.regfrm {
+	width: 568px;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.form_style1 input {
+	width: 568px;
+	height: 60px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	margin-bottom: 20px;
+	font-size: 18px;
+	font-family: '微软雅黑';
+	background: #8e8d8d;
+	text-indent: 60px;
+}
+
+.form_style2 input {
+	width: 330px;
+	height: 55px;
+	-moz-border-radius: 3px;
+	-khtml-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	border-radius: 3px;
+	border: none;
+	border: none;
+	font: 18px/55px '微软雅黑';
+	background: #8e8d8d;
+	text-indent: 60px;
+	float: left;
+}
+
+.form_style3 input {
+	width: 194px;
+	height: 50px;
+	-moz-border-radius: 80px;
+	-khtml-border-radius: 80px;
+	-webkit-border-radius: 80px;
+	border-radius: 80px;
+	border: none;
+	font: 18px/50px '微软雅黑';
+	margin-left: 150px;
+	background: #fff;
+	cursor: pointer;
+}
+
+.yzm {
+	height: 70px;
+	width: 160px;
+	background: #8f8e8d;
+	float: right;
+	margin-top: 10px;
+}
+
+::-webkit-input-placeholder {
+	color: #303337;
+}
+
+.p1 {
+	color: #fff;
+	font: 14px/3 '微软雅黑';
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.2s;
+	-o-transition: all 0.2s;
+	transition: all 0.2s;
+}
+
+.p1:hover {
+	color: #ee3531;
+	text-decoration: underline
+}
+
+.form_style1,
+.form_style2 {
+	position: relative;
+	font-family: '微软雅黑'
+}
+
+.icon {
+	display: inline-block;
+	position: absolute;
+	left: 20px;
+	top: 15px;
+}
+
+
+/* 注册 */
+
+.content_logfix {
+	width: 0;
+	height: 0;
+	position: fixed;
+	left: 50%;
+	right: 50%;
+	top: 50%;
+	bottom: 50%;
+}
+
+.content_log {
+	height: 450px;
+	width: 810px;
+	background: rgba(0, 0, 0, 0.5);
+	margin-left: -405px;
+	margin-top: -225px;
+}
+
+.btn_yzm {
+	height: 25px;
+	width: 138px;
+	text-align: center;
+	color: #888;
+	line-height: 25px;
+	background: #dedddd;
+	border: none;
+	border-radius: 15px;
+	position: absolute;
+	right: 10px;
+	z-index: 999;
+	top: 20px;
+}
+
+.form_style4 input,
+.form_style4 a {
+	width: 194px;
+	height: 50px;
+	-moz-border-radius: 80px;
+	-khtml-border-radius: 80px;
+	-webkit-border-radius: 80px;
+	border-radius: 80px;
+	border: none;
+	font: 18px/50px '微软雅黑';
+	margin-left: 20px;
+	background: #fff;
+	margin-top: 15px;
+	display: inline-block;
+	letter-spacing: 2px;
+	cursor: pointer;
+}
+
+.mobile_verify .send_sms_verify {
+	background: #FF634D none repeat scroll 0% 0%;
+	text-indent: 0;
+	margin-left: 10px;
+}
+
+.mobile_verify #settings-mobile-code {
+	width: 260px;
+}
+
+
+/* 表单提醒 */
+
+.regfrm .tip_box11 {
+	float: left;
+	background: #fff;
+	border-radius: 3px;
+	width: 100%;
+	margin-bottom: 5px;
+	margin-top: -13px;
+	display: inline-block;
+	position: relative;
+	right: 0;
+}
+
+.regfrm .tip_box {
+	display: inline;
+}
+
+.regfrm .tip_box {
+	float: left;
+	height: 25px;
+	width: auto;
+	text-align: center;
+	color: #888;
+	line-height: 25px;
+	background: #fff none repeat scroll 0% 0%;
+	border: medium none;
+	border-radius: 5px;
+	position: absolute;
+	right: 10px;
+	z-index: 999;
+	top: 10px;
+}
+
+.regfrm .tip_box div {
+	margin: 0 2px 0 10px;
+}
+
+.form_style2 .yzm1 img {
+	#margin-left: -80px;
+	float: right;
+	margin-right: 120px;
+}
+
+.footer {
+	height: 45px;
+	color: #fff;
+	line-height: 45px;
+	width: 100%;
+	background: rgba(0, 0, 0, 0.5);
+	bottom: 0;
+	position: fixed;
+	margin-top: 30px;
+	text-align: center
+}
+
+.bbt_user_message {
+	font-size: 14px;
+	color: #EE3531;
+	float: left;
+	display: inline-block;
+	position: relative;
+	left: 0;
+	top: 18px;
+}
+
+.bbt_user_message a {
+	color: #fff;
+}
+
+.bbt_user_message a:hover {
+	color: #EE3531;
+}
+
+
+/*窄屏*/
+
+@media (max-width:1480px) {
+	.content {
+		margin-top: 10px;
+	}
+	
+}

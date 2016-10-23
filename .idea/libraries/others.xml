@@ -7,6 +7,8 @@
       <root url="jar://$PROJECT_DIR$/libs/log4j-api-2.3.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/fastjson-1.2.2.jar!/" />
       <root url="jar://$PROJECT_DIR$/libs/json-lib-2.4-jdk15.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/javax.servlet.jsp.jstl.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/jstl-impl.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES>

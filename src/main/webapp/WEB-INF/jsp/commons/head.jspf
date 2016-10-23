@@ -1,0 +1,698 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %> 
+<%@ taglib uri="/struts-tags" prefix="s" %>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="renderer" content="webkit" />
+		<meta property="qc:admins" content="2307577372076730756375" />
+		<title>酷么管理平台</title>
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/4583e96cf1aaa3861ba8863a8077ca48_1.css" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/more1280.css" id="screenCss" />
+		<link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/bootstrap.css" />
+
+		<link href="${pageContext.request.contextPath}/css/header.css" rel="stylesheet" type="text/css">
+		
+		<link href="${pageContext.request.contextPath}/css/iconfont.css" rel="stylesheet" type="text/css">
+		<link href="${pageContext.request.contextPath}/css/style.css" rel="stylesheet" type="text/css" />
+		<link href="${pageContext.request.contextPath}/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+	
+		<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/jquery-2.1.1.js"></script>
+		<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/jquery.min.js"></script>
+		<script language="javascript" type="text/javascript" src="${pageContext.request.contextPath}/js/index.js"></script>
+
+		<script type="text/javascript" src="${pageContext.request.contextPath}/js/e3203a9deb7e7411424217cfb2737eba.js"></script>
+		<script type="text/javascript">
+                var APP_ROOT = '';            
+                var LOADER_IMG = '${pageContext.request.contextPath}/img/lazy_loading.gif';
+                var ERROR_IMG = '${pageContext.request.contextPath}/img/image_err.gif';
+                var send_span = 6000;
+                var __HASH_KEY__ = "kaodxiEQXJwveJmFSOGVYSLcBQWyPyBVuTjozjrnjoHvaBISQy";
+        </script>
+		
+		<script type='text/javascript' src='${pageContext.request.contextPath}/js/region.js'></script>
+	
+		<style type="text/css" id="notify-bootstrap">
+			.notifyjs-bootstrap-base {
+				font-weight: bold;
+				padding: 8px 15px 8px 14px;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+				background-color: #fcf8e3;
+				border: 1px solid #fbeed5;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				white-space: nowrap;
+				padding-left: 25px;
+				background-repeat: no-repeat;
+				background-position: 3px 7px;
+			}
+			
+			.notifyjs-bootstrap-error {
+				color: #B94A48;
+				background-color: #F2DEDE;
+				border-color: #EED3D7;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+			}
+			
+			.notifyjs-bootstrap-success {
+				color: #468847;
+				background-color: #DFF0D8;
+				border-color: #D6E9C6;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+			}
+			
+			.notifyjs-bootstrap-info {
+				color: #3A87AD;
+				background-color: #D9EDF7;
+				border-color: #BCE8F1;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+			}
+			
+			.notifyjs-bootstrap-warn {
+				color: #C09853;
+				background-color: #FCF8E3;
+				border-color: #FBEED5;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+			}
+		</style>
+		<style type="text/css" id="notify-bootstrap">
+			.notifyjs-bootstrap-base {
+				font-weight: bold;
+				padding: 8px 15px 8px 14px;
+				text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+				background-color: #fcf8e3;
+				border: 1px solid #fbeed5;
+				-webkit-border-radius: 4px;
+				-moz-border-radius: 4px;
+				border-radius: 4px;
+				white-space: nowrap;
+				padding-left: 25px;
+				background-repeat: no-repeat;
+				background-position: 3px 7px;
+			}
+			
+			.notifyjs-bootstrap-error {
+				color: #B94A48;
+				background-color: #F2DEDE;
+				border-color: #EED3D7;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAtRJREFUeNqkVc1u00AQHq+dOD+0poIQfkIjalW0SEGqRMuRnHos3DjwAH0ArlyQeANOOSMeAA5VjyBxKBQhgSpVUKKQNGloFdw4cWw2jtfMOna6JOUArDTazXi/b3dm55socPqQhFka++aHBsI8GsopRJERNFlY88FCEk9Yiwf8RhgRyaHFQpPHCDmZG5oX2ui2yilkcTT1AcDsbYC1NMAyOi7zTX2Agx7A9luAl88BauiiQ/cJaZQfIpAlngDcvZZMrl8vFPK5+XktrWlx3/ehZ5r9+t6e+WVnp1pxnNIjgBe4/6dAysQc8dsmHwPcW9C0h3fW1hans1ltwJhy0GxK7XZbUlMp5Ww2eyan6+ft/f2FAqXGK4CvQk5HueFz7D6GOZtIrK+srupdx1GRBBqNBtzc2AiMr7nPplRdKhb1q6q6zjFhrklEFOUutoQ50xcX86ZlqaZpQrfbBdu2R6/G19zX6XSgh6RX5ubyHCM8nqSID6ICrGiZjGYYxojEsiw4PDwMSL5VKsC8Yf4VRYFzMzMaxwjlJSlCyAQ9l0CW44PBADzXhe7xMdi9HtTrdYjFYkDQL0cn4Xdq2/EAE+InCnvADTf2eah4Sx9vExQjkqXT6aAERICMewd/UAp/IeYANM2joxt+q5VI+ieq2i0Wg3l6DNzHwTERPgo1ko7XBXj3vdlsT2F+UuhIhYkp7u7CarkcrFOCtR3H5JiwbAIeImjT/YQKKBtGjRFCU5IUgFRe7fF4cCNVIPMYo3VKqxwjyNAXNepuopyqnld602qVsfRpEkkz+GFL1wPj6ySXBpJtWVa5xlhpcyhBNwpZHmtX8AGgfIExo0ZpzkWVTBGiXCSEaHh62/PoR0p/vHaczxXGnj4bSo+G78lELU80h1uogBwWLf5YlsPmgDEd4M236xjm+8nm4IuE/9u+/PH2JXZfbwz4zw1WbO+SQPpXfwG/BBgAhCNZiSb/pOQAAAAASUVORK5CYII=);
+			}
+			
+			.notifyjs-bootstrap-success {
+				color: #468847;
+				background-color: #DFF0D8;
+				border-color: #D6E9C6;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAutJREFUeNq0lctPE0Ecx38zu/RFS1EryqtgJFA08YCiMZIAQQ4eRG8eDGdPJiYeTIwHTfwPiAcvXIwXLwoXPaDxkWgQ6islKlJLSQWLUraPLTv7Gme32zoF9KSTfLO7v53vZ3d/M7/fIth+IO6INt2jjoA7bjHCJoAlzCRw59YwHYjBnfMPqAKWQYKjGkfCJqAF0xwZjipQtA3MxeSG87VhOOYegVrUCy7UZM9S6TLIdAamySTclZdYhFhRHloGYg7mgZv1Zzztvgud7V1tbQ2twYA34LJmF4p5dXF1KTufnE+SxeJtuCZNsLDCQU0+RyKTF27Unw101l8e6hns3u0PBalORVVVkcaEKBJDgV3+cGM4tKKmI+ohlIGnygKX00rSBfszz/n2uXv81wd6+rt1orsZCHRdr1Imk2F2Kob3hutSxW8thsd8AXNaln9D7CTfA6O+0UgkMuwVvEFFUbbAcrkcTA8+AtOk8E6KiQiDmMFSDqZItAzEVQviRkdDdaFgPp8HSZKAEAL5Qh7Sq2lIJBJwv2scUqkUnKoZgNhcDKhKg5aH+1IkcouCAdFGAQsuWZYhOjwFHQ96oagWgRoUov1T9kRBEODAwxM2QtEUl+Wp+Ln9VRo6BcMw4ErHRYjH4/B26AlQoQQTRdHWwcd9AH57+UAXddvDD37DmrBBV34WfqiXPl61g+vr6xA9zsGeM9gOdsNXkgpEtTwVvwOklXLKm6+/p5ezwk4B+j6droBs2CsGa/gNs6RIxazl4Tc25mpTgw/apPR1LYlNRFAzgsOxkyXYLIM1V8NMwyAkJSctD1eGVKiq5wWjSPdjmeTkiKvVW4f2YPHWl3GAVq6ymcyCTgovM3FzyRiDe2TaKcEKsLpJvNHjZgPNqEtyi6mZIm4SRFyLMUsONSSdkPeFtY1n0mczoY3BHTLhwPRy9/lzcziCw9ACI+yql0VLzcGAZbYSM5CCSZg1/9oc/nn7+i8N9p/8An4JMADxhH+xHfuiKwAAAABJRU5ErkJggg==);
+			}
+			
+			.notifyjs-bootstrap-info {
+				color: #3A87AD;
+				background-color: #D9EDF7;
+				border-color: #BCE8F1;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3QYFAhkSsdes/QAAA8dJREFUOMvVlGtMW2UYx//POaWHXg6lLaW0ypAtw1UCgbniNOLcVOLmAjHZolOYlxmTGXVZdAnRfXQm+7SoU4mXaOaiZsEpC9FkiQs6Z6bdCnNYruM6KNBw6YWewzl9z+sHImEWv+vz7XmT95f/+3/+7wP814v+efDOV3/SoX3lHAA+6ODeUFfMfjOWMADgdk+eEKz0pF7aQdMAcOKLLjrcVMVX3xdWN29/GhYP7SvnP0cWfS8caSkfHZsPE9Fgnt02JNutQ0QYHB2dDz9/pKX8QjjuO9xUxd/66HdxTeCHZ3rojQObGQBcuNjfplkD3b19Y/6MrimSaKgSMmpGU5WevmE/swa6Oy73tQHA0Rdr2Mmv/6A1n9w9suQ7097Z9lM4FlTgTDrzZTu4StXVfpiI48rVcUDM5cmEksrFnHxfpTtU/3BFQzCQF/2bYVoNbH7zmItbSoMj40JSzmMyX5qDvriA7QdrIIpA+3cdsMpu0nXI8cV0MtKXCPZev+gCEM1S2NHPvWfP/hL+7FSr3+0p5RBEyhEN5JCKYr8XnASMT0xBNyzQGQeI8fjsGD39RMPk7se2bd5ZtTyoFYXftF6y37gx7NeUtJJOTFlAHDZLDuILU3j3+H5oOrD3yWbIztugaAzgnBKJuBLpGfQrS8wO4FZgV+c1IxaLgWVU0tMLEETCos4xMzEIv9cJXQcyagIwigDGwJgOAtHAwAhisQUjy0ORGERiELgG4iakkzo4MYAxcM5hAMi1WWG1yYCJIcMUaBkVRLdGeSU2995TLWzcUAzONJ7J6FBVBYIggMzmFbvdBV44Corg8vjhzC+EJEl8U1kJtgYrhCzgc/vvTwXKSib1paRFVRVORDAJAsw5FuTaJEhWM2SHB3mOAlhkNxwuLzeJsGwqWzf5TFNdKgtY5qHp6ZFf67Y/sAVadCaVY5YACDDb3Oi4NIjLnWMw2QthCBIsVhsUTU9tvXsjeq9+X1d75/KEs4LNOfcdf/+HthMnvwxOD0wmHaXr7ZItn2wuH2SnBzbZAbPJwpPx+VQuzcm7dgRCB57a1uBzUDRL4bfnI0RE0eaXd9W89mpjqHZnUI5Hh2l2dkZZUhOqpi2qSmpOmZ64Tuu9qlz/SEXo6MEHa3wOip46F1n7633eekV8ds8Wxjn37Wl63VVa+ej5oeEZ/82ZBETJjpJ1Rbij2D3Z/1trXUvLsblCK0XfOx0SX2kMsn9dX+d+7Kf6h8o4AIykuffjT8L20LU+w4AZd5VvEPY+XpWqLV327HR7DzXuDnD8r+ovkBehJ8i+y8YAAAAASUVORK5CYII=);
+			}
+			
+			.notifyjs-bootstrap-warn {
+				color: #C09853;
+				background-color: #FCF8E3;
+				border-color: #FBEED5;
+				background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAMAAAC6V+0/AAABJlBMVEXr6eb/2oD/wi7/xjr/0mP/ykf/tQD/vBj/3o7/uQ//vyL/twebhgD/4pzX1K3z8e349vK6tHCilCWbiQymn0jGworr6dXQza3HxcKkn1vWvV/5uRfk4dXZ1bD18+/52YebiAmyr5S9mhCzrWq5t6ufjRH54aLs0oS+qD751XqPhAybhwXsujG3sm+Zk0PTwG6Shg+PhhObhwOPgQL4zV2nlyrf27uLfgCPhRHu7OmLgAafkyiWkD3l49ibiAfTs0C+lgCniwD4sgDJxqOilzDWowWFfAH08uebig6qpFHBvH/aw26FfQTQzsvy8OyEfz20r3jAvaKbhgG9q0nc2LbZxXanoUu/u5WSggCtp1anpJKdmFz/zlX/1nGJiYmuq5Dx7+sAAADoPUZSAAAAAXRSTlMAQObYZgAAAAFiS0dEAIgFHUgAAAAJcEhZcwAACxMAAAsTAQCanBgAAAAHdElNRQfdBgUBGhh4aah5AAAAlklEQVQY02NgoBIIE8EUcwn1FkIXM1Tj5dDUQhPU502Mi7XXQxGz5uVIjGOJUUUW81HnYEyMi2HVcUOICQZzMMYmxrEyMylJwgUt5BljWRLjmJm4pI1hYp5SQLGYxDgmLnZOVxuooClIDKgXKMbN5ggV1ACLJcaBxNgcoiGCBiZwdWxOETBDrTyEFey0jYJ4eHjMGWgEAIpRFRCUt08qAAAAAElFTkSuQmCC);
+			}
+		</style>
+		<style type="text/css" id="core-notify">
+			.notifyjs-corner {
+				position: fixed;
+				margin: 5px;
+				z-index: 1050;
+			}
+			
+			.notifyjs-corner .notifyjs-wrapper,
+			.notifyjs-corner .notifyjs-container {
+				position: relative;
+				display: block;
+				height: inherit;
+				width: inherit;
+				margin: 3px;
+			}
+			
+			.notifyjs-wrapper {
+				z-index: 1;
+				position: absolute;
+				display: inline-block;
+				height: 0;
+				width: 0;
+			}
+			
+			.notifyjs-container {
+				display: none;
+				z-index: 1;
+				position: absolute;
+				cursor: pointer;
+			}
+			
+			[data-notify-text],
+			[data-notify-html] {
+				position: relative;
+			}
+			
+			.notifyjs-arrow {
+				position: absolute;
+				z-index: 2;
+				width: 0;
+				height: 0;
+			}
+		</style>
+		<style type="text/css" id="core-notify">
+			.notifyjs-corner {
+				position: fixed;
+				margin: 5px;
+				z-index: 1050;
+			}
+			
+			.notifyjs-corner .notifyjs-wrapper,
+			.notifyjs-corner .notifyjs-container {
+				position: relative;
+				display: block;
+				height: inherit;
+				width: inherit;
+				margin: 3px;
+			}
+			
+			.notifyjs-wrapper {
+				z-index: 1;
+				position: absolute;
+				display: inline-block;
+				height: 0;
+				width: 0;
+			}
+			
+			.notifyjs-container {
+				display: none;
+				z-index: 1;
+				position: absolute;
+				cursor: pointer;
+			}
+			
+			[data-notify-text],
+			[data-notify-html] {
+				position: relative;
+			}
+			
+			.notifyjs-arrow {
+				position: absolute;
+				z-index: 2;
+				width: 0;
+				height: 0;
+			}
+		</style>
+		<style>
+			.sea {
+				cursor: pointer;
+				z-index: 999;
+			}
+			
+			.search-button {
+				float: right;
+				margin: 20px 30px 0;
+			}
+			
+			.search-close {
+				width: 55px;
+				height: 55px;
+				position: absolute;
+				/*top: 20px;*/
+				text-align: center;
+				cursor: pointer;
+				/*right: -100px;*/
+				/*margin-top: 10px;*/
+			}
+			
+			.search-close:hover {
+				color: red
+			}
+			
+			.search-submit {
+				position: absolute;
+				/*right: 50px;*/
+				/*top: 30px;*/
+				z-index: 11;
+			}
+			
+			.row> .nav>li>a {
+				padding: 0;
+			}
+			
+			.divall {
+				width: 100%;
+				/*background: red;*/
+				margin-bottom: 20px;
+				height: 120px;
+				padding: 20px;
+			}
+			
+			.boxall {
+				padding: 10px 0;
+				text-align: center;
+				height: auto;
+				color: white;
+				border-radius: 5px;
+				margin: 5px;
+				width: 23%;
+				float: left;
+				/*ie*/
+				-moz-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+				/*firefox*/
+				-webkit-box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+				/*safari或chrome*/
+				box-shadow: 1px 1px 10px rgba(0, 0, 0, 0.2);
+				/*opera或ie9*/
+			}
+			
+			.boxall dl dt {
+				font-weight: lighter;
+				font-size: 1.5em;
+				border-bottom: 1px solid rgba(225, 225, 225, 0.5);
+			}
+			
+			.boxall dl dt i {
+				padding-right: 10px;
+				padding-bottom: 10px;
+			}
+			
+			.boxall dl dd span {
+				font-size: 3em;
+				color: white;
+			}
+			
+			.boxall dl dd {
+				padding-top: 10px;
+			}
+			
+			.color1 {
+				background: #39B2D0;
+			}
+			
+			.color2 {
+				background: #F2A438;
+			}
+			
+			.color3 {
+				background: #54A956;
+			}
+			
+			.color4 {
+				background: #E54E4B;
+			}
+			
+			.color5 {
+				background: #8344EE;
+			}
+			
+			.color6 {
+				background: #A0C24A;
+			}
+			
+			.color7 {
+				background: #C41C83;
+			}
+			
+			.color8 {
+				background: hotpink;
+			}
+			
+			.level {
+				padding: 30px 20px;
+				width: 100%;
+				font-size: 1.3em;
+			}
+			
+			.level>.uplevel {
+				border-radius: 5px;
+				padding: 5px 10px;
+				background: rgba(238, 59, 45, 0.8);
+				color: white;
+			}
+		</style>
+	</head>
+
+	<body style="height: 100%;">
+	
+		<style>
+			#cnzz_stat_icon_1260282820 img {
+				width: 0px;
+				height: 0px;
+			}.header {
+				/*background: rgba(0,0,0,0.5);*/
+				background: #2a2a2a;
+				color: white;
+			}
+			.item{
+				background: #df1c1c;
+			}
+.header_list .row{
+				margin:auto;
+			}
+			/*.nav li:hover{
+				background:red;
+			}
+			.nav li a span:hover{
+				background: red;
+			}*/
+		</style>
+	
+		<script src="${pageContext.request.contextPath}/js/jquery.cookie.js"></script>
+
+		<script src="${pageContext.request.contextPath}/js/underscore-1.8.3.js"></script>
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.min.css">
+		<script src="${pageContext.request.contextPath}/js/bootstrap.js"></script>
+	
+		<link rel="stylesheet" href="${pageContext.request.contextPath}/css/zuo.css">
+			
+		<script src="${pageContext.request.contextPath}/js/notify.js"></script>
+	
+		<script src="${pageContext.request.contextPath}/js/loadmask.js"></script>
+		<script src="${pageContext.request.contextPath}/js/moment-with-locales.min.js"></script>
+
+
+		<div class="header" id="header_nav_top">
+ 	<div class="header-top">
+ 		 
+ 		<input type="hidden" name="check_login" value="">
+		        <div class="loginbar">
+        	<div class="login_tip">	
+		<span>
+		<a  href="#" style="padding: 0 6px;color: white; " id="show_pop_login">我的推荐码  ${sessionScope.user.id}</a>
+		<i class="line"></i>
+							<a href="login_logout" title="注册"  style="padding: 0 6px;color: white; ">注销</a>
+						<a href="javascript:void(0);" id="zc_phone" class="zc_phone pr">
+			&nbsp;<s class="icon_arrow icon_arrow_down"></s>
+		</a>
+			</span>
+	
+		<div id="zc_phone_drop" style="position:absolute; display:none;">
+		<div class="zc_phone_drop">
+						<div class="zc_phone_box">
+				<img src="${pageContext.request.contextPath}/img/566e40f5d227c.png" alt="手机端" />
+			</div>
+					</div>
+	</div>
+</div> 
+        </div>
+		
+	</div>
+
+	<div class="header_list" >
+		
+		<div class="row">
+			<div class="logo" style="width: auto;">
+										<img src="${pageContext.request.contextPath}/img/kume1.png" style="height: 80%;margin:auto 0;float: left;padding-top: 5px;padding-left:5px;margin-right: 5px;margin-top: 10px;"/>
+		
+									</div>
+			<ul class="nav ">
+									 <li>
+									<a href="#" class="" title="投资服务平台" style="color: white;font-size: 18px;">投资服务平台<span></span></a>
+								</li>
+								<li>
+									<a href="#" class="" title="酷SAAS平台" style="color: white;font-size: 18px;">酷SAAS平台<span></span></a>
+								</li>
+								<li>
+									<a href="#" class="" title="广告平台" style="color: white;font-size: 18px;">广告平台<span></span></a>
+								</li>
+										</ul>
+			
+		</div>
+	</div>
+</div>
+
+		<div class="clearfloat"></div>
+
+	
+	
+
+		<script>
+			var J = jQuery;
+			var needLoadEmp = ''
+			J(function() {
+				var selectContent = J('ul.conpany-ul');
+
+				J('body').on('click', function() {
+					if(!selectContent.is(":hidden")) {
+						selectContent.hide();
+					}
+				});
+
+				J('#select-company').click(function(e) {
+					_stopPropagation(e);
+					if(selectContent.is(':hidden')) {
+						selectContent.show();
+					} else {
+						selectContent.hide();
+					}
+				});
+
+				J('body').on('click', 'ul.conpany-ul li', function(e) {
+					_stopPropagation(e);
+					var jli = J(this);
+					var cid = jli.data('cid');
+					var currentCid = J('#select-company .current-company-name').data('cid');
+					if(cid == currentCid) {
+						selectContent.hide();
+						return;
+					}
+					J.post('/forward/user/doSelect4hr.htm', {
+						cid: cid
+					}, function(data) {
+						if(data.result == 0) {
+							window.location.href = "/employee/route.htm";
+						} else {
+							J.tips.error(data.message);
+						}
+					})
+				});
+
+				function _stopPropagation(e) {
+					if(e && e.stopPropagation) {
+						e.stopPropagation();
+					} else {
+						window.event.cancelBubble = true;
+					}
+				}
+
+			})
+		</script>
+		<script type="text/javascript">
+			(function() {
+				if(!($(".zc_phone_drop").children().length)) {
+					$(".zc_phone").remove();
+				}
+
+		</script>
+		<script>
+			$(document).ready(function() {
+				// Graph scripts here
+
+				var graphData = [{
+					// Visits
+					data: [
+						[6, 1300],
+						[7, 1600],
+						[8, 1900],
+						[9, 2100],
+						[10, 2500],
+						[11, 2200],
+						[12, 2000],
+						[13, 1950],
+						[14, 1900],
+						[15, 2000]
+					],
+					color: '#71c73e'
+				}, {
+					// Returning Visits
+					data: [
+						[6, 500],
+						[7, 600],
+						[8, 550],
+						[9, 600],
+						[10, 800],
+						[11, 900],
+						[12, 800],
+						[13, 850],
+						[14, 830],
+						[15, 1000]
+					],
+					color: '#77b7c5',
+					points: {
+						radius: 4,
+						fillColor: '#77b7c5'
+					}
+				}];
+				// Lines
+				$.plot($('#graph-lines'), graphData, {
+					series: {
+						points: {
+							show: true,
+							radius: 5
+						},
+						lines: {
+							show: true
+						},
+						shadowSize: 0,
+					},
+					grid: {
+						color: '#646464',
+						borderColor: 'transparent',
+						borderWidth: 20,
+						hoverable: true,
+						show: true,
+					},
+					xaxis: {
+						tickColor: '#DADADA',
+						tickDecimals: 2
+					},
+					yaxis: {
+						tickSize: 300
+					}
+				});			
+			});
+		</script>
+		<script src="https://cdn.bootcss.com/flot/0.8.3/jquery.flot.min.js"></script>
+		<style type="text/css">
+			/* Resets */
+			
+			.graph-container,
+			.graph-container div,
+			.graph-container a,
+			.graph-container span {
+				margin: 0;
+				padding: 0;
+			}
+			/* Gradinet and Rounded Corners */
+			
+			.graph-container,
+			#tooltip,
+			.graph-info a {
+				background: #ffffff;
+				background: -moz-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+				background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #f9f9f9));
+				background: -webkit-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+				background: -o-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+				background: -ms-linear-gradient(top, #ffffff 0%, #f9f9f9 100%);
+				background: linear-gradient(to bottom, #ffffff 0%, #f9f9f9 100%);
+				-webkit-border-radius: 3px;
+				-moz-border-radius: 3px;
+				border-radius: 3px;
+			}
+			/* Graph Container */
+			
+			.graph-container {
+				position: relative;
+				/*width: 550px;*/
+				width: 95%;
+				height: 300px;
+				padding: 20px;
+				-webkit-box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+				-moz-box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+				box-shadow: 0px 1px 2px rgba(0, 0, 0, .1);
+			}
+			
+			.graph-container> div {
+				position: absolute;
+				width: inherit;
+				height: inherit;
+				top: 10px;
+				left: 25px;
+			}
+			
+			.graph-info {
+				width: 590px;
+				margin-bottom: 10px;
+			}
+			
+			.visitors {
+				/*background: #71c73e;*/
+				padding: 5px 10px;
+				border-bottom: 2px solid #71c73e;
+			}
+			
+			.visitors i {
+				margin-right: 5px;
+				color: #71c73e;
+			}
+			
+			.returning {
+				/*background: #71c73e;*/
+				padding: 5px 10px;
+				border-bottom: 2px solid #77b7c5;
+			}
+			
+			.returning i {
+				margin-right: 5px;
+				color: #77b7c5;
+			}
+			
+			.newlist {
+				width: 30%;
+				float: left;
+				margin-left: 30px;
+			}
+			
+			.newul {
+				width: 100%;
+			}
+			
+			.newul li {
+				padding: 5px 0;
+				color: #38b2d6;
+				clear: both;
+			}
+			
+			.newul p {
+				text-indent: 1em;
+				float: left;
+				margin: 0;
+			}
+			
+			.newul div {
+				
+				clear: both;
+				text-indent: 1em;
+			}
+			
+			.div1 {
+				display: block;
+				width: 170px;
+				/*对宽度的定义,根据情况修改*/
+				overflow: hidden;
+				white-space: nowrap;
+				text-overflow: ellipsis;
+				margin-left: 0;
+
+			}
+			.div1 span{
+				color: gray;
+			}
+		</style>
+		<style>
+			.m-form-style,
+			.modal-icon {
+				font-size: 14px;
+			}
+			
+			.modal-icon {
+				height: 20px;
+				width: 20px;
+				line-height: 20px;
+			}
+			
+			.modal-footer .btn {
+				margin-bottom: 0;
+				margin-left: 5px;
+			}
+			
+		</style>

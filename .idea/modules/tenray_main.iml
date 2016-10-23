@@ -1,14 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <module external.linked.project.id="tenray:main" external.linked.project.path="$MODULE_DIR$/../.." external.root.project.path="$MODULE_DIR$/../.." external.system.id="GRADLE" external.system.module.group="com.ray.cool" external.system.module.type="sourceSet" external.system.module.version="1.0-SNAPSHOT" type="JAVA_MODULE" version="4">
   <component name="FacetManager">
-    <facet type="Spring" name="Spring">
-      <configuration>
-        <fileset id="fileset" name="Spring Application Context" removed="false">
-          <file>file://$MODULE_DIR$/../../src/main/config/spring-config.xml</file>
-          <file>file://$MODULE_DIR$/../../src/main/resources/spring-config.xml</file>
-        </fileset>
-      </configuration>
-    </facet>
     <facet type="web" name="Web Gradle : tenray-1.0-SNAPSHOT.war">
       <configuration>
         <descriptors>
@@ -21,12 +13,19 @@
       <facet type="Struts2" name="Struts 2">
         <configuration>
           <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/../../src/main/config/struts.xml</file>
             <file>jar://E:/java tools/gradle-2.14.1/repository/caches/modules-2/files-2.1/org.apache.struts/struts2-core/2.3.20/91173d906a1587a1e24acc9d94f009c10d6cd9ea/struts2-core-2.3.20.jar!/struts-default.xml</file>
+            <file>file://$MODULE_DIR$/../../src/main/resources/struts.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
         </configuration>
       </facet>
+    </facet>
+    <facet type="Spring" name="Spring">
+      <configuration>
+        <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/../../src/main/resources/spring-config.xml</file>
+        </fileset>
+      </configuration>
     </facet>
     <facet type="web" name="Web Gradle : tenray-1.0-SNAPSHOT.war">
       <configuration>
@@ -51,7 +50,29 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/mail.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../libs/log4j-api-2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-api-2.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/log4j-core-2.3.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES>
+          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-core-2.3-sources.jar!/" />
+        </SOURCES>
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/javax.servlet.jsp.jstl.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -60,12 +81,19 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/log4j-api-2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../libs/log4j-1.2.17.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-api-2.3-sources.jar!/" />
-        </SOURCES>
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/jstl-impl.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
@@ -80,22 +108,29 @@
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/fastjson-1.2.2.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../libs/mail.jar!/" />
         </CLASSES>
         <JAVADOC />
-        <SOURCES>
-          <root url="jar://$USER_HOME$/.ideaLibSources/fastjson-1.2.2-sources.jar!/" />
-        </SOURCES>
+        <SOURCES />
       </library>
     </orderEntry>
     <orderEntry type="module-library">
       <library>
         <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/log4j-core-2.3.jar!/" />
+          <root url="jar://$MODULE_DIR$/../../libs/json-lib-2.4-jdk15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/fastjson-1.2.2.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES>
-          <root url="jar://$USER_HOME$/.ideaLibSources/log4j-core-2.3-sources.jar!/" />
+          <root url="jar://$USER_HOME$/.ideaLibSources/fastjson-1.2.2-sources.jar!/" />
         </SOURCES>
       </library>
     </orderEntry>
@@ -143,15 +178,7 @@
     <orderEntry type="library" name="Gradle: com.mchange:mchange-commons-java:0.2.3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:5.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="others" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.38" level="application_server_libraries" />
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
-          <root url="jar://$MODULE_DIR$/../../libs/json-lib-2.4-jdk15.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
   </component>
 </module>

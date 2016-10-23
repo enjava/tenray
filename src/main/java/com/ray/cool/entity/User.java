@@ -70,8 +70,9 @@ public class User implements Serializable {
     @JoinColumn(name = "parentId")
 	private Set<User> children = new HashSet<User>();// 自关联 孩子
 
-    @OneToMany
+    @OneToMany(fetch=FetchType.EAGER)
     @JoinColumn(name = "userId")
+    //@Lazy(value = false)
 	private Set<Order> orders = new HashSet<Order>();// 与订单 多对多
 
     @ManyToOne               //指定多对一关系
@@ -79,9 +80,8 @@ public class User implements Serializable {
     @Lazy(value = false)
 	private Leve leve;// 等级表，多对一
 
-    @OneToMany
+    @OneToMany(fetch = FetchType.EAGER)
     @JoinColumn(name = "userId")
-    @Lazy(value = false)
 	private Set<RecommendedAward> recommendedAwards;// 推荐奖励表一对多
 
     public Long getId() {

@@ -1,0 +1,33 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ taglib uri="/struts-tags" prefix="s" %>
+
+
+	<script>
+			var J = jQuery;
+			J(function() {
+				J('.datepicker').datepicker({
+					format: "yyyy-mm-dd",
+					todayBtn: true,
+					language: "zh-CN",
+					todayHighlight: true,
+					autoclose: true
+				});
+			});
+		</script>
+	
+
+		<script src="${pageContext.request.contextPath}/js/bootstrap-modal.js"></script>
+	
+		<div class="_height" style="background: #f3f3f3;z-index: -1;position: absolute;top: 0;">
+	
+		</div>
+		<div class="foot" style="padding-top: 50px;">
+			<div class="footer"style="height: 50px;line-height: 50px;background: rgba(0,0,0,.5);font-size:12px;bottom: 0px;left: 0;position: fixed;bottom: 0;left: 0;">
+	   		<p class="fp">Copyright©2016 www.coolmall.cc 酷么 All Rights Reserved. 杭州腾晖智能科技有限公司 浙ICP备14018827号</p>
+	
+	   </div>
+		</div>	
+	</body>
+
+</html>
