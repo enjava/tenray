@@ -16,7 +16,7 @@ public class MyPackage {
 	@Id
     @GenericGenerator(name = "idGenerator", strategy = "native")
     @GeneratedValue(generator = "idGenerator")
-	private Integer id;//
+	private Long id;//
 	@Column (length = 20 )
 	private String price;// 总价
 	@Column(length = 50)
@@ -29,11 +29,11 @@ public class MyPackage {
 	@JoinColumn(name = "myPackageId")
 	private Set<Order> orders = new HashSet<Order>();// 订单表，一对多
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 

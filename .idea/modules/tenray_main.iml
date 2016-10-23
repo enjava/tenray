@@ -4,6 +4,7 @@
     <facet type="Spring" name="Spring">
       <configuration>
         <fileset id="fileset" name="Spring Application Context" removed="false">
+          <file>file://$MODULE_DIR$/../../src/main/config/spring-config.xml</file>
           <file>file://$MODULE_DIR$/../../src/main/resources/spring-config.xml</file>
         </fileset>
       </configuration>
@@ -20,7 +21,7 @@
       <facet type="Struts2" name="Struts 2">
         <configuration>
           <fileset id="s2fileset" name="My Fileset " removed="false">
-            <file>file://$MODULE_DIR$/../../src/main/resources/struts.xml</file>
+            <file>file://$MODULE_DIR$/../../src/main/config/struts.xml</file>
             <file>jar://E:/java tools/gradle-2.14.1/repository/caches/modules-2/files-2.1/org.apache.struts/struts2-core/2.3.20/91173d906a1587a1e24acc9d94f009c10d6cd9ea/struts2-core-2.3.20.jar!/struts-default.xml</file>
           </fileset>
           <propertiesKeys disabled="false" />
@@ -143,5 +144,14 @@
     <orderEntry type="library" name="Gradle: org.ow2.asm:asm-tree:5.0.2" level="project" />
     <orderEntry type="library" name="Gradle: org.springframework:spring-context:4.2.4.RELEASE" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="Tomcat 8.0.38" level="application_server_libraries" />
+    <orderEntry type="module-library">
+      <library>
+        <CLASSES>
+          <root url="jar://$MODULE_DIR$/../../libs/json-lib-2.4-jdk15.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
   </component>
 </module>

@@ -14,9 +14,9 @@ public class RecommendedAward {
 	@Id
     @GenericGenerator(name = "idGenerator", strategy = "native")
     @GeneratedValue(generator = "idGenerator")
-	private Integer id;
+	private Long id;
 	@Column
-	private Integer orderUserId;// 订单用户ID
+	private Long orderUserId;// 订单用户ID
 	@Column (length = 20 )
 	private String orderMoney;// 订单金额
 	@Column
@@ -45,19 +45,19 @@ public class RecommendedAward {
     @JoinColumn(name = "orderId")
 	private Order order;// 多对一
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Integer getOrderUserId() {
+    public Long getOrderUserId() {
         return orderUserId;
     }
 
-    public void setOrderUserId(Integer orderUserId) {
+    public void setOrderUserId(Long orderUserId) {
         this.orderUserId = orderUserId;
     }
 

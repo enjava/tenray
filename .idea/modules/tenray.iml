@@ -11,11 +11,11 @@
   </component>
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../..">
-      <excludeFolder url="file://$MODULE_DIR$/../../.gradle" />
-      <excludeFolder url="file://$MODULE_DIR$/../../build" />
-    </content>
+    <content url="file://$MODULE_DIR$/../.." />
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="library" name="others" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.2.4.RELEASE" level="project" />
+    <orderEntry type="library" name="Gradle: org.springframework:spring-core:4.2.4.RELEASE" level="project" />
   </component>
 </module>

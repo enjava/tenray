@@ -15,7 +15,7 @@ import java.util.Set;
 @Table(name = "cool_user")
 public class User implements Serializable {
     @Id
-	private Integer id;
+	private Long id;
     @Column(length = 20,nullable = false)
     private String mobile;// 手机号
     @Column(length = 50,nullable = false)
@@ -55,7 +55,7 @@ public class User implements Serializable {
     @Column(nullable = false)
 	private Date createTime;// 创建时间
     @Column
-	private Integer code;// 用于保存 父亲的id
+	private Long code;// 用于保存 父亲的id
 
     @Column (length = 1 )
 	private String is3000;// 是否有购买过3000的订单
@@ -84,12 +84,16 @@ public class User implements Serializable {
     @Lazy(value = false)
 	private Set<RecommendedAward> recommendedAwards;// 推荐奖励表一对多
 
-    public Integer getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(Integer id) {
+    public void setId(Long id) {
         this.id = id;
+    }
+
+    public void setCode(Long code) {
+        this.code = code;
     }
 
     public String getMobile() {
@@ -242,14 +246,6 @@ public class User implements Serializable {
 
     public void setCreateTime(Date createTime) {
         this.createTime = createTime;
-    }
-
-    public Integer getCode() {
-        return code;
-    }
-
-    public void setCode(Integer code) {
-        this.code = code;
     }
 
     public String getIs3000() {

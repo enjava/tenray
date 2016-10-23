@@ -15,7 +15,7 @@ public class Leve {
 	@Id
     @GenericGenerator(name = "idGenerator", strategy = "native")
     @GeneratedValue(generator = "idGenerator")
-	private Integer id;
+	private Long id;
 
 	@Column(length = 50)
 	private String description;// 描述会员
@@ -27,12 +27,12 @@ public class Leve {
     @JoinColumn(name="leveId")  //指定与本类主键所对应的外表的外键
     private Set<User> users=new HashSet<User>();
 
-    public Integer getId() {
-        return id;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setId(Integer id) {
-        this.id = id;
+    public Long getId() {
+        return id;
     }
 
     public String getDescription() {
