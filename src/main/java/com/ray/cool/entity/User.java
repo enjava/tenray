@@ -1,5 +1,8 @@
 package com.ray.cool.entity;
 
+import org.springframework.context.annotation.Lazy;
+
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.HashSet;
@@ -8,261 +11,300 @@ import java.util.Set;
 /**
  * Created by en on 2016/10/12. 会员
  */
-
+@Entity
+@Table(name = "cool_user")
 public class User implements Serializable {
+    @Id
 	private Integer id;
-	private String mobile;// 手机号
+    @Column(length = 20,nullable = false)
+    private String mobile;// 手机号
+    @Column(length = 50,nullable = false)
 	private String password;// 密码
+    @Column(length = 50 )
 	private String username;// 昵称
+    @Column(length = 50 )
 	private String email;// 邮箱
+    @Column(length = 20 )
 	private String name;// 真实姓名
+    @Column(length = 20 )
 	private String iDcard;// 身份证
+    @Column(length = 1 )
 	private String gender;// 性别 0为未知 1男 2女
+    @Column(length = 10 )
 	private String province;// 省份
+    @Column(length = 20 )
 	private String city;// 城市
+    @Column(length = 50 )
 	private String company;// 公司
+    @Column(length = 100 )
 	private String position;// 职位
-
-	private String selfIntroduction;// 自我介绍
+    @Column
+    private String selfIntroduction;// 自我介绍
+    @Column
 	private String blog;// 博客或微博
+    @Column(length = 30 )
 	private String account;// 银行账号
+    @Column
 	private String headImg;// 头像
+    @Column
 	private Date birthday;// 生日
+    @Column(length = 50 )
 	private String qq;// qq号
+    @Column(length = 50 )
 	private String weixin;// 微信号
+    @Column(nullable = false)
 	private Date createTime;// 创建时间
-
+    @Column
 	private Integer code;// 用于保存 父亲的id
-	private User parent;// 自关联 父亲
+
+    @Column (length = 1 )
 	private String is3000;// 是否有购买过3000的订单
+    @Column (length = 50 )
+    private String payPassword;// 支付密码
+
+    @ManyToOne               //指定多对一关系
+    @JoinColumn(name="parentId")  //自关联
+    private User parent;// 自关联 父亲
+
+    @OneToMany
+    @JoinColumn(name = "parentId")
 	private Set<User> children = new HashSet<User>();// 自关联 孩子
+
+    @OneToMany
+    @JoinColumn(name = "userId")
 	private Set<Order> orders = new HashSet<Order>();// 与订单 多对多
+
+    @ManyToOne               //指定多对一关系
+    @JoinColumn(name="leveId")  //一个员工只有一个等级  和登记表,多对一
+    @Lazy(value = false)
 	private Leve leve;// 等级表，多对一
-	private String payPassword;// 支付密码
+
+    @OneToMany
+    @JoinColumn(name = "userId")
+    @Lazy(value = false)
 	private Set<RecommendedAward> recommendedAwards;// 推荐奖励表一对多
 
-	public String getPayPassword() {
-		return payPassword;
-	}
+    public Integer getId() {
+        return id;
+    }
 
-	public void setPayPassword(String payPassword) {
-		this.payPassword = payPassword;
-	}
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public String getIs3000() {
-		return is3000;
-	}
+    public String getMobile() {
+        return mobile;
+    }
 
-	public void setIs3000(String is3000) {
-		this.is3000 = is3000;
-	}
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
 
-	public Set<RecommendedAward> getRecommendedAwards() {
-		return recommendedAwards;
-	}
+    public String getPassword() {
+        return password;
+    }
 
-	public void setRecommendedAwards(Set<RecommendedAward> recommendedAwards) {
-		this.recommendedAwards = recommendedAwards;
-	}
+    public void setPassword(String password) {
+        this.password = password;
+    }
 
-	public Leve getLeve() {
-		return leve;
-	}
+    public String getUsername() {
+        return username;
+    }
 
-	public void setLeve(Leve leve) {
-		this.leve = leve;
-	}
+    public void setUsername(String username) {
+        this.username = username;
+    }
 
-	public Integer getId() {
-		return id;
-	}
+    public String getEmail() {
+        return email;
+    }
 
-	public void setId(Integer id) {
-		this.id = id;
-	}
+    public void setEmail(String email) {
+        this.email = email;
+    }
 
-	public String getMobile() {
-		return mobile;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public void setMobile(String mobile) {
-		this.mobile = mobile;
-	}
+    public void setName(String name) {
+        this.name = name;
+    }
 
-	public String getPassword() {
-		return password;
-	}
+    public String getiDcard() {
+        return iDcard;
+    }
 
-	public void setPassword(String password) {
-		this.password = password;
-	}
+    public void setiDcard(String iDcard) {
+        this.iDcard = iDcard;
+    }
 
-	public String getUsername() {
-		return username;
-	}
+    public String getGender() {
+        return gender;
+    }
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    public void setGender(String gender) {
+        this.gender = gender;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public String getProvince() {
+        return province;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public void setProvince(String province) {
+        this.province = province;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public String getCity() {
+        return city;
+    }
 
-	public void setName(String name) {
-		this.name = name;
-	}
+    public void setCity(String city) {
+        this.city = city;
+    }
 
-	public String getiDcard() {
-		return iDcard;
-	}
+    public String getCompany() {
+        return company;
+    }
 
-	public void setiDcard(String iDcard) {
-		this.iDcard = iDcard;
-	}
+    public void setCompany(String company) {
+        this.company = company;
+    }
 
-	public String getGender() {
-		return gender;
-	}
+    public String getPosition() {
+        return position;
+    }
 
-	public void setGender(String gender) {
-		this.gender = gender;
-	}
+    public void setPosition(String position) {
+        this.position = position;
+    }
 
-	public String getProvince() {
-		return province;
-	}
+    public String getSelfIntroduction() {
+        return selfIntroduction;
+    }
 
-	public void setProvince(String province) {
-		this.province = province;
-	}
+    public void setSelfIntroduction(String selfIntroduction) {
+        this.selfIntroduction = selfIntroduction;
+    }
 
-	public String getCity() {
-		return city;
-	}
+    public String getBlog() {
+        return blog;
+    }
 
-	public void setCity(String city) {
-		this.city = city;
-	}
+    public void setBlog(String blog) {
+        this.blog = blog;
+    }
 
-	public String getCompany() {
-		return company;
-	}
+    public String getAccount() {
+        return account;
+    }
 
-	public void setCompany(String company) {
-		this.company = company;
-	}
+    public void setAccount(String account) {
+        this.account = account;
+    }
 
-	public String getPosition() {
-		return position;
-	}
+    public String getHeadImg() {
+        return headImg;
+    }
 
-	public void setPosition(String position) {
-		this.position = position;
-	}
+    public void setHeadImg(String headImg) {
+        this.headImg = headImg;
+    }
 
-	public String getSelfIntroduction() {
-		return selfIntroduction;
-	}
+    public Date getBirthday() {
+        return birthday;
+    }
 
-	public void setSelfIntroduction(String selfIntroduction) {
-		this.selfIntroduction = selfIntroduction;
-	}
+    public void setBirthday(Date birthday) {
+        this.birthday = birthday;
+    }
 
-	public String getBlog() {
-		return blog;
-	}
+    public String getQq() {
+        return qq;
+    }
 
-	public void setBlog(String blog) {
-		this.blog = blog;
-	}
+    public void setQq(String qq) {
+        this.qq = qq;
+    }
 
-	public String getAccount() {
-		return account;
-	}
+    public String getWeixin() {
+        return weixin;
+    }
 
-	public void setAccount(String account) {
-		this.account = account;
-	}
+    public void setWeixin(String weixin) {
+        this.weixin = weixin;
+    }
 
-	public String getHeadImg() {
-		return headImg;
-	}
+    public Date getCreateTime() {
+        return createTime;
+    }
 
-	public void setHeadImg(String headImg) {
-		this.headImg = headImg;
-	}
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 
-	public Date getBirthday() {
-		return birthday;
-	}
+    public Integer getCode() {
+        return code;
+    }
 
-	public void setBirthday(Date birthday) {
-		this.birthday = birthday;
-	}
+    public void setCode(Integer code) {
+        this.code = code;
+    }
 
-	public String getQq() {
-		return qq;
-	}
+    public String getIs3000() {
+        return is3000;
+    }
 
-	public void setQq(String qq) {
-		this.qq = qq;
-	}
+    public void setIs3000(String is3000) {
+        this.is3000 = is3000;
+    }
 
-	public String getWeixin() {
-		return weixin;
-	}
+    public String getPayPassword() {
+        return payPassword;
+    }
 
-	public void setWeixin(String weixin) {
-		this.weixin = weixin;
-	}
+    public void setPayPassword(String payPassword) {
+        this.payPassword = payPassword;
+    }
 
-	public Integer getCode() {
-		return code;
-	}
+    public User getParent() {
+        return parent;
+    }
 
-	public void setCode(Integer code) {
-		this.code = code;
-	}
+    public void setParent(User parent) {
+        this.parent = parent;
+    }
 
-	public User getParent() {
-		return parent;
-	}
+    public Set<User> getChildren() {
+        return children;
+    }
 
-	public void setParent(User parent) {
-		this.parent = parent;
-	}
+    public void setChildren(Set<User> children) {
+        this.children = children;
+    }
 
-	public Set<User> getChildren() {
-		return children;
-	}
+    public Set<Order> getOrders() {
+        return orders;
+    }
 
-	public void setChildren(Set<User> children) {
-		this.children = children;
-	}
+    public void setOrders(Set<Order> orders) {
+        this.orders = orders;
+    }
 
-	public Set<Order> getOrders() {
-		return orders;
-	}
+    public Leve getLeve() {
+        return leve;
+    }
 
-	public void setOrders(Set<Order> orders) {
-		this.orders = orders;
-	}
+    public void setLeve(Leve leve) {
+        this.leve = leve;
+    }
 
-	public Date getCreateTime() {
-		return createTime;
-	}
+    public Set<RecommendedAward> getRecommendedAwards() {
+        return recommendedAwards;
+    }
 
-	public void setCreateTime(Date createTime) {
-		this.createTime = createTime;
-	}
-
+    public void setRecommendedAwards(Set<RecommendedAward> recommendedAwards) {
+        this.recommendedAwards = recommendedAwards;
+    }
 }
