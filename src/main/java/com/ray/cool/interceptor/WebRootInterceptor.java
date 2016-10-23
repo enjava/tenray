@@ -1,6 +1,6 @@
 package com.ray.cool.interceptor;
 
-import com.ray.cool.util.RequestUtil;
+import com.ray.cool.utils.RequestUtil;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.handler.HandlerInterceptorAdapter;
 

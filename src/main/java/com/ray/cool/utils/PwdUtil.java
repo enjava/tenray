@@ -1,4 +1,4 @@
-package com.ray.cool.util;
+package com.ray.cool.utils;
 
 import com.ray.cool.bean.Constans;
 

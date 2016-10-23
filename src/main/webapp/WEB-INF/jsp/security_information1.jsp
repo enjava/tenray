@@ -742,18 +742,19 @@ h3{
 										<form class="ajax_form_identify" action="/settings-binding_investor.html">
 
 											<div class="control-group small-control-group">
-												<label class="control-label" id="identify_name_str">个人身份证姓名:</label>
+												<label class="control-label" id="identify_name_str">身份证姓名:</label>
 												<div class="control-text">
-													<input type="text" id="" value="" class="small_textbox" name="identify_name">
+													<input type="text" id="idName" value="" class="small_textbox" name="identify_name">
 												</div>
 												<div class="blank0"></div>
 											</div>
 											<div class="control-group small-control-group">
 												<label class="control-label">身份证号码:</label>
 												<div class="control-text">
-													<input type="text" id="" value="" class="small_textbox" name="identify_number">
+													<input type="text" id="idNumber" value="" class="small_textbox" name="identify_number">
 												</div>
 												<div class="blank0"></div>
+
 											</div>
 
 											<div class="control-group small-control-group">
@@ -761,12 +762,16 @@ h3{
 												<div class="pic_box f_l mr20">
 													<i class="del_pic"></i>
 													<div class="pic_show" id="audit_data_legal_num" style="position: relative;">
-														<img id="identify_positive" src="" style="z-index: 1;">
-														<input type="hidden" name="identify_positive_image" id="identify_positive_image" value="" rel="num">
-														<div id="html5_1atkmc9rg1ghbgnjqul19fgk9o3_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1atkmc9rg1ghbgnjqul19fgk9o3" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp"></div>
-													</div>
+
+                                                        <div id="image_face" style="width:390px;height:280px; background:#CCCCCC; float:left;">
+                                                            <img />
+                                                        </div>
+                                                     </div>
 												</div>
-												<div class="blank0"></div>
+                                                <input   id="idFaceImg" name="idFaceImg" type="file"  accept="image/gif,image/jpeg,image/png,image/bmp"/>
+
+                                                <div class="blank0"> </div>
+
 											</div>
 
 											<div class="control-group small-control-group">
@@ -774,96 +779,43 @@ h3{
 												<div class="pic_box f_l mr20">
 													<i class="del_pic"></i>
 													<div class="pic_show" id="audit_data_legal_credit_num" style="position: relative;">
-														<img id="identify_nagative" src="" style="z-index: 1;">
-														<input type="hidden" name="identify_nagative_image" id="identify_nagative_image" value="" rel="num">
-														<div id="html5_1atkmc9ri73011fv16udqr01l4a6_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1atkmc9ri73011fv16udqr01l4a6" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp"></div>
+                                                        <div id="image_back" style="width:390px;height:280px; background:#CCCCCC; float:left;">
+                                                            <img  />
+                                                        </div>
 													</div>
 												</div>
-												<div class="blank0"></div>
-											</div>
+                                                <input   id="idBackImg" name="idBackImg" type="file" accept="image/gif,image/jpeg,image/png,image/bmp"/>
+
+                                                <div class="blank0"></div>
+
+                                            </div>
 											<div class="control-group small-control-group">
 												<label class="control-label"></label>
 												<div class="control-text">
 													注：单个图片大小不超过1MB,选择 文件后需等待几秒上传
 												</div>
 												<div class="blank0"></div>
-											</div>
-
-											<div class="hidden pt20 mt20" id="qy_div" style="display: none;">
-												<div class="control-group small-control-group">
-													<label class="control-label">企业名称:</label>
-													<div class="control-text">
-														<input type="text" id="" value="" class="small_textbox" name="identify_business_name">
-													</div>
-													<div class="blank0"></div>
-												</div>
-
-												<div class="control-group small-control-group">
-													<label class="control-label">营业执照:</label>
-													<div class="pic_box f_l mr20">
-														<i class="del_pic"></i>
-														<div class="pic_show" id="audit_data_legal_num" style="position: relative;">
-
-															<img id="business_licence" src="" style="z-index: 1;">
-
-															<input type="hidden" name="identify_business_licence" id="identify_business_licence" value="" rel="num">
-															<div id="html5_1atkmc9rlaov4vv18us1n3lau89_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1atkmc9rlaov4vv18us1n3lau89" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp"></div>
-														</div>
-													</div>
-													<div class="blank0"></div>
-												</div>
-
-												<div class="control-group small-control-group">
-													<label class="control-label">组织机构代码证:</label>
-													<div class="pic_box f_l mr20">
-														<i class="del_pic"></i>
-														<div class="pic_show" id="audit_data_legal_credit_num" style="position: relative;">
-															<img id="business_code" src="" style="z-index: 1;">
-															<input type="hidden" name="identify_business_code" id="identify_business_code" value="" rel="num">
-															<div id="html5_1atkmc9rnbf08rtuil1m281o5c_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1atkmc9rnbf08rtuil1m281o5c" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp"></div>
-														</div>
-													</div>
-													<div class="blank0"></div>
-												</div>
-
-												<div class="control-group small-control-group">
-													<label class="control-label">税务登记证:</label>
-													<div class="pic_box f_l mr20">
-														<i class="del_pic"></i>
-														<div class="pic_show" id="audit_data_legal_credit_num" style="position: relative;">
-															<img id="business_tax" src="" style="z-index: 1;">
-															<input type="hidden" name="identify_business_tax" id="identify_business_tax" value="" rel="num">
-															<div id="html5_1atkmc9ro6psmqhqib13e6slvf_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 0px; left: 0px; width: 0px; height: 0px; overflow: hidden; z-index: 0;"><input id="html5_1atkmc9ro6psmqhqib13e6slvf" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp"></div>
-														</div>
-													</div>
-													<div class="blank0"></div>
-												</div>
 
 											</div>
-											<div class="blank0"></div>
-											<div class="control-group smaller-control-group">
-												<label class="control-label">手机号:</label>
-												<div class="control-text"><s:property value="#session.user.mobile.substring(0,3)"/>*****<s:property value="#session.user.mobile.substring(8)"/></div>
-												<div class="blank0"></div>
-											</div>
-											<div class="control-group small-control-group">
-												<label class="control-label">验证码:</label>
-												<div class="control-text">
-													<input type="text" value="" class="small_textbox mr10" name="verify" style="width:165px;">
-													<input type="button" value="获取验证码" class="ui_button send_sms_verify small_send_sms_verify bg_red" id="J_send_sms_verify_iden">
-												</div>
-											</div>
-											<div class="blank10"></div>
-											<div class="submit_btn_row control-group">
-												<label class="control-label"></label>
-												<div class="ui-button theme_bgcolor" rel="green">提交</div>
-												<input type="hidden" value="1" name="ajax">
-												<input type="hidden" value="0" name="step">
-											</div>
-
-										</form>
-
-									</div>
+                                            <div class="control-group smaller-control-group">
+                                                <label class="control-label">手机号:</label>
+                                                <div class="control-text"><s:property value="#session.user.mobile.substring(0,3)"/>*****<s:property value="#session.user.mobile.substring(8)"/></div>
+                                                <div class="blank0"></div>
+                                            </div>
+                                            <div class="control-group small-control-group">
+                                                <label class="control-label">验证码:</label>
+                                                <div class="control-text">
+                                                    <input type="text" value="" id="input_verify_update_pay" class="small_textbox mr10" name="verify" style="width:165px;">
+                                                    <input type="button" onclick="uploadIdFace(this)" value="获取验证码" class="ui_button send_sms_verify small_send_sms_verify bg_red">
+                                                </div>
+                                            </div>
+                                            <div class="submit_btn_row control-group">
+                                                <label class="control-label"></label>
+                                                <input type="button" value="提交" name="setting_mobile" onclick="settingMobile()"  class="ui-button theme_bgcolor" id="setting_mobile">
+                                                <input type="hidden" value="1" name="ajax">
+                                            </div>
+                                        </form>
+                                    </div>
 								</li>
 							</ul>
 						</div>
@@ -876,7 +828,130 @@ h3{
 			</div>
 		</div>
 		</div>
-		<script>	
+<script>
+    var  isupFace =false;
+   function uploadIdFace(objc) {
+       alert("aaaa");
+       var  filter=/^[\u4e00-\u9fa5]{2,6}$/;
+       var id_name=$("#idName").val();
+       var id_number=$("#idNumber").val();
+       var idFaceImg=$("#idFaceImg");
+       var idBackImg=$("#idBackImg");
+       if(!filter.test(id_name)){
+           alert("输入的身份证姓名不合法");
+           return false;
+       }
+       if (id_number.length==0){
+           alert("身份证号不能为空");
+           return false;
+       }
+       if(!IdentityCodeValid(id_number)){
+           alert("身份证不合法,请检查是否有输错身份证");
+           return false;
+       }
+       if(idFaceImg==null){
+           alert("请先选择要认证的身份证正面照,谢谢!");
+           return false;
+       }
+       if(!checkPic(idFaceImg,"身份证正面照的"))
+           return false;
+       if(idBackImg==null){
+           alert("请您选择要认证的身份证背面照,谢谢!");
+           return false;
+       }
+       if(!checkPic(idBackImg,"身份证背面照的"))
+           return false;
+       $.ajax({
+           url: "uploadIdFace.action",
+           data: {
+               "iDcard" : id_number,
+               "idName" : id_name,
+              // "newPayPassword" : new_pypassword,
+           },
+           type: "post",
+           async: true,//
+           success: function (msg) {
+               if (msg == "success") {
+                   isupFace = true;
+               }
+           }
+       });
+
+       settime(obj);
+   }
+   function checkPic (objImg,fmsg) {
+       filepath=$(objImg).val();
+       var extStart=filepath.lastIndexOf(".");
+       var ext=filepath.substring(extStart,filepath.length).toUpperCase();
+       if(ext!=".BMP"&&ext!=".PNG"&&ext!=".GIF"&&ext!=".JPG"&&ext!=".JPEG"){
+           alert(fmsg+"图片限于png,gif,jpeg,jpg格式");
+           return false;
+       }
+       return true;
+   }
+
+    document.getElementById('idBackImg').onchange = function() {
+        var imgFile = this.files[0];
+        var fr = new FileReader();
+        fr.onload = function() {
+            document.getElementById('image_back').getElementsByTagName('img')[0].src = fr.result;
+        };
+        fr.readAsDataURL(imgFile);
+    };
+    document.getElementById('idFaceImg').onchange = function() {
+        var imgFile = this.files[0];
+        var fr = new FileReader();
+        fr.onload = function() {
+            document.getElementById('image_face').getElementsByTagName('img')[0].src = fr.result;
+        };
+        fr.readAsDataURL(imgFile);
+    };
+
+  //身份证号码验证
+   function IdentityCodeValid(code) {
+       var city={11:"北京",12:"天津",13:"河北",14:"山西",15:"内蒙古",21:"辽宁",22:"吉林",23:"黑龙江 ",31:"上海",32:"江苏",33:"浙江",34:"安徽",35:"福建",36:"江西",37:"山东",41:"河南",42:"湖北 ",43:"湖南",44:"广东",45:"广西",46:"海南",50:"重庆",51:"四川",52:"贵州",53:"云南",54:"西藏 ",61:"陕西",62:"甘肃",63:"青海",64:"宁夏",65:"新疆",71:"台湾",81:"香港",82:"澳门",91:"国外 "};
+       var tip = "";
+       var pass= true;
+
+       if(!code || !/^\d{6}(18|19|20)?\d{2}(0[1-9]|1[12])(0[1-9]|[12]\d|3[01])\d{3}(\d|X)$/i.test(code)){
+           tip = "身份证号格式错误";
+           pass = false;
+       }
+
+       else if(!city[code.substr(0,2)]){
+           tip = "地址编码错误";
+           pass = false;
+       }
+       else{
+           //18位身份证需要验证最后一位校验位
+           if(code.length == 18){
+               code = code.split('');
+               //∑(ai×Wi)(mod 11)
+               //加权因子
+               var factor = [ 7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2 ];
+               //校验位
+               var parity = [ 1, 0, 'X', 9, 8, 7, 6, 5, 4, 3, 2 ];
+               var sum = 0;
+               var ai = 0;
+               var wi = 0;
+               for (var i = 0; i < 17; i++)
+               {
+                   ai = code[i];
+                   wi = factor[i];
+                   sum += ai * wi;
+               }
+               var last = parity[sum % 11];
+               if(parity[sum % 11] != code[17]){
+                   tip = "校验位错误";
+                   pass =false;
+               }
+           }
+       }
+       return pass;
+   }
+
+</script>
+<script>
 		
 		 function save_update_pay_pw(){
 				var oldpaypassword = $("#oldpaypassword").val();

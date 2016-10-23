@@ -240,7 +240,8 @@ document.getElementById("self1").className="current";
 			<!--button改成了file-->
 			</label>
 			<label class="fileuploading hide"></label>
-		<div id="html5_1atihkrl0h9f1jkcocunlm1lrs3_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 224px; left: 10px; width: 97px; height: 39px; overflow: hidden; z-index: 0;"><input id="html5_1atihkrl0h9f1jkcocunlm1lrs3" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp">
+		<div id="html5_1atihkrl0h9f1jkcocunlm1lrs3_container" class="moxie-shim moxie-shim-html5" style="position: absolute; top: 224px; left: 10px; width: 97px; height: 39px; overflow: hidden; z-index: 0;">
+            <input id="html5_1atihkrl0h9f1jkcocunlm1lrs3" type="file" style="font-size: 999px; opacity: 0; position: absolute; top: 0px; left: 0px; width: 100%; height: 100%;" accept="image/gif,image/jpeg,image/png,image/bmp">
 		</div></div>
 							<div id="gotop" style="display: block; z-index: 99;"></div>
 							<div class="blank"></div>

@@ -56,11 +56,14 @@ public class User implements Serializable {
 	private Date createTime;// 创建时间
     @Column
 	private Long code;// 用于保存 父亲的id
-
     @Column (length = 1 )
 	private String is3000;// 是否有购买过3000的订单
     @Column (length = 50 )
     private String payPassword;// 支付密码
+    private String idFace;//身份证正面
+    private String idBack;//身份证背面
+    @Column (length = 50 )
+    private String idName;//身份证姓名
 
     @ManyToOne               //指定多对一关系
     @JoinColumn(name="parentId")  //自关联
@@ -302,5 +305,33 @@ public class User implements Serializable {
 
     public void setRecommendedAwards(Set<RecommendedAward> recommendedAwards) {
         this.recommendedAwards = recommendedAwards;
+    }
+
+    public Long getCode() {
+        return code;
+    }
+
+    public String getIdFace() {
+        return idFace;
+    }
+
+    public void setIdFace(String idFace) {
+        this.idFace = idFace;
+    }
+
+    public String getIdBack() {
+        return idBack;
+    }
+
+    public void setIdBack(String idBack) {
+        this.idBack = idBack;
+    }
+
+    public String getIdName() {
+        return idName;
+    }
+
+    public void setIdName(String idName) {
+        this.idName = idName;
     }
 }
